@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
+const mongoDbUrl = 'mongodb://localhost:27017/course-goals';
+
 const Goal = require('./models/goal');
 
 const app = express();
@@ -84,7 +86,7 @@ app.delete('/goals/:id', async (req, res) => {
 });
 
 mongoose.connect(
-  'mongodb://localhost:27017/course-goals',
+  mongoDbUrl,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
