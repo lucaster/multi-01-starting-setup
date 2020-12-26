@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-
-import GoalInput from './components/goals/GoalInput';
+import React, { useEffect, useState } from 'react';
 import CourseGoals from './components/goals/CourseGoals';
+import GoalInput from './components/goals/GoalInput';
 import ErrorAlert from './components/UI/ErrorAlert';
+
 
 function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
@@ -45,8 +45,8 @@ function App() {
           text: goalText,
         }),
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
 
       const resData = await response.json();
@@ -106,7 +106,10 @@ function App() {
       {error && <ErrorAlert errorText={error} />}
       <GoalInput onAddGoal={addGoalHandler} />
       {!isLoading && (
-        <CourseGoals goals={loadedGoals} onDeleteGoal={deleteGoalHandler} />
+        <CourseGoals 
+          goals={loadedGoals} 
+          onDeleteGoal={deleteGoalHandler} 
+        />
       )}
     </div>
   );

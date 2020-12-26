@@ -6,6 +6,6 @@ const goalSchema = new Schema({
   text: String
 });
 
-const GoalModel = mongoose.model('Goal', goalSchema);
+const GoalModel = mongoose.model('Goal', goalSchema, 'goals');
 
 module.exports = GoalModel;
