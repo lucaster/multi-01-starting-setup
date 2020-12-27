@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const mongoDbUrl = 'mongodb://host.docker.internal:27017/course-goals';
+const mongoDbUrl = 'mongodb://mongodb:27017/course-goals';
 const port = 80;
 
 const Goal = require('./models/goal');

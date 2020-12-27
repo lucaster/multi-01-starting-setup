@@ -3,6 +3,7 @@ import CourseGoals from './components/goals/CourseGoals';
 import GoalInput from './components/goals/GoalInput';
 import ErrorAlert from './components/UI/ErrorAlert';
 
+const endpoint = 'http://goals-backend';
 
 function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
@@ -14,7 +15,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch('http://localhost/goals');
+        const response = await fetch(endpoint + '/goals');
 
         const resData = await response.json();
 
@@ -39,7 +40,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost/goals', {
+      const response = await fetch(endpoint + '/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -78,7 +79,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost/goals/' + goalId, {
+      const response = await fetch(endpoint + '/goals/' + goalId, {
         method: 'DELETE',
       });
 

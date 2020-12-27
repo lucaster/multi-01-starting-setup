@@ -1,9 +1,10 @@
+docker network create goals-net
 docker stop goals-frontend goals-backend mongodb
 docker build -t goals-node ./backend
 docker build -t goals-react ./frontend
-docker run --name mongodb        -d  --rm -p 27017:27017 mongo
-docker run --name goals-backend  -d  --rm -p 80:80       goals-node
-docker run --name goals-frontend -it --rm -p 3000:3000   goals-react
+docker run --name mongodb        -d  --rm --network goals-net              mongo
+docker run --name goals-backend  -d  --rm --network goals-net              goals-node
+docker run --name goals-frontend -it --rm --network goals-net -p 3000:3000 goals-react
 
 
 -it necessario per react npm start
