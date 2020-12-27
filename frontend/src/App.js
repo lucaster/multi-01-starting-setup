@@ -3,7 +3,7 @@ import CourseGoals from './components/goals/CourseGoals';
 import GoalInput from './components/goals/GoalInput';
 import ErrorAlert from './components/UI/ErrorAlert';
 
-const endpoint = 'http://goals-backend';
+const endpoint = 'http://localhost';
 
 function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
