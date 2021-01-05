@@ -8,7 +8,7 @@ const morgan = require('morgan');
 
 const mongoDbUsername = 'max';
 const mongoDbPassword = 'secret';
-const mongoDbUrl = `mongodb://${mongoDbUsername}:${mongoDbPassword}@mongodb:27017/course-goals`;
+const mongoDbUrl = `mongodb://${mongoDbUsername}:${mongoDbPassword}@mongodb:27017/course-goals?authSource=admin`;
 const port = 80;
 
 const Goal = require('./models/goal');
