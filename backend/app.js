@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const mongoDbUrl = 'mongodb://mongodb:27017/course-goals';
+const mongoDbUsername = 'max';
+const mongoDbPassword = 'secret';
+const mongoDbUrl = `mongodb://${mongoDbUsername}:${mongoDbPassword}@mongodb:27017/course-goals`;
 const port = 80;
 
 const Goal = require('./models/goal');
