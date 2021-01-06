@@ -1,4 +1,6 @@
-docker stop goals-frontend goals-backend mongodb
+docker stop goals-frontend
+docker stop goals-backend
+docker stop mongodb
 docker build -t goals-node  ./backend
 docker build -t goals-react ./frontend
 docker network create goals-net
