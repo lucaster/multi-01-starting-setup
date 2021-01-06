@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
+const logsPath = path.join(__dirname, 'logs', 'access.log');
 const mongoDbUsername = 'max';
 const mongoDbPassword = 'secret';
 const mongoDbUrl = `mongodb://${mongoDbUsername}:${mongoDbPassword}@mongodb:27017/course-goals?authSource=admin`;
@@ -16,7 +17,7 @@ const Goal = require('./models/goal');
 const app = express();
 
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, 'logs', 'access.log'),
+  logsPath,
   { flags: 'a' }
 );
 
