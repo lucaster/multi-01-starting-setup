@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 const logsPath = path.join(__dirname, 'logs', 'access.log');
-const mongoDbUsername = 'max';
-const mongoDbPassword = 'secret';
+const mongoDbUsername = process.env.MONGODB_USERNAME;
+const mongoDbPassword = process.env.MONGODB_PASSWORD;
 const mongoDbUrl = `mongodb://${mongoDbUsername}:${mongoDbPassword}@mongodb:27017/course-goals?authSource=admin`;
 const port = 80;
 
